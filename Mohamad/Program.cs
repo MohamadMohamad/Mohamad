@@ -24,6 +24,13 @@ namespace Mohamad
                 json.Session = Session.Current;
                 return json;
             });
+
+            Handle.GET("/Mohamad/partial/corp/{?}", (string id) =>
+            {
+                var json = new CorpDetails();
+                json.Data = DbHelper.FromID(DbHelper.Base64DecodeObjectID(id));
+                return json;
+            });
         }
     }
 }

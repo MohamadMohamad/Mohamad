@@ -1,0 +1,30 @@
+﻿<link rel="import" href="/sys/polymer/polymer.html">
+
+<template>
+    <template is="dom-bind">
+        <div>
+            <h3>{{model.Name}}</h3>
+            <h4>Franchise Offices</h4>
+            <h5>Sort On</h5>
+            <button value="{{model.HomesSortButton$::click}}" onmousedown="++this.value">Number of Homes</button> -
+            <button value="{{model.TotalCommissionSortButton$::click}}" onmousedown="++this.value">Total Commission</button> -
+            <button value="{{model.AverageCommissionSortButton$::click}}" onmousedown="++this.value">Average Commission</button> -
+            <button value="{{model.TrendSortButton$::click}}" onmousedown="++this.value">Positive Trend</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th><th>Number of homes sold</th><th>Total commission</th> <th>Average commission</th><th>Trend</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template is="dom-repeat" items="{{model.FranchiseList}}">
+                        <tr>
+                            <td>{{item.Name}}</td><td>{{item.HomesSold}}</td><td>{{item.TotalCommission}}</td><td>{{item.AverageCommission}}</td><td>{{item.Trend}}</td>
+                        </tr>
+                    </template>
+                    
+                </tbody>
+            </table>
+        </div>
+    </template>
+</template>

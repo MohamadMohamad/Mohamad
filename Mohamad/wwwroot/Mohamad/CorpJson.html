@@ -12,5 +12,10 @@
         <button value="{{model.AddCorpButton$::click}}" onmousedown="++this.value">Add Corporation</button>
         <br />
         <h3>List of Corporations</h3>
+        <template is="dom-repeat" items="{{model.CorpList}}">
+            <div>
+                <starcounter-include partial="{{item}}"></starcounter-include>
+            </div>
+        </template>
     </template>
 </template>

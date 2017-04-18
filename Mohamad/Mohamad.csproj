@@ -84,6 +84,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CorpDetails.json.cs">
+      <DependentUpon>CorpDetails.json</DependentUpon>
+    </Compile>
     <Compile Include="CorpJson.json.cs">
       <DependentUpon>CorpJson.json</DependentUpon>
     </Compile>
@@ -97,7 +100,13 @@
     <TypedJSON Include="CorpJson.json">
       <Generator>MsBuild:Compile</Generator>
     </TypedJSON>
+    <TypedJSON Include="CorpDetails.json">
+      <Generator>MsBuild:Compile</Generator>
+    </TypedJSON>
     <None Include="wwwroot\Mohamad\CorpJson.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\Mohamad\CorpDetails.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(StarcounterBin)\Starcounter.MsBuild.targets" />
