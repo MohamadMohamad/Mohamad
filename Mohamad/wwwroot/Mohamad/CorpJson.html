@@ -1,0 +1,16 @@
+﻿<link rel="import" href="/sys/polymer/polymer.html">
+
+<template>
+    <template is="dom-bind">
+        <h1>Welcome</h1>
+        <h3>Create Main Corporation</h3>
+        <fieldset>
+            <label>Name:</label>
+            <input value="{{model.Name$::input}}" />
+        </fieldset>
+        <br />
+        <button value="{{model.AddCorpButton$::click}}" onmousedown="++this.value">Add Corporation</button>
+        <br />
+        <h3>List of Corporations</h3>
+    </template>
+</template>

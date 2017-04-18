@@ -8,7 +8,7 @@ using Starcounter;
 namespace Mohamad
 {
     [Database]
-    class Transaction
+    public class Transaction
     {
         public DateTime Date;
         public Decimal Price;
