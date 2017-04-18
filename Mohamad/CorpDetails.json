@@ -6,5 +6,6 @@
   "TotalCommissionSortButton$": 0,
   "AverageCommisionSortButton$": 0,
   "TrendSortButton$": 0,
-  "AddFranchiseSection": { }
+  "AddFranchiseButton$": 0,
+  "FranchiseName$": ""
 }

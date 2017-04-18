@@ -8,15 +8,25 @@ namespace Mohamad
         protected override void OnData()
         {
             base.OnData();
+            UpdateFranchiseList();
+        }
+        
+        void UpdateFranchiseList()
+        {
             Corporation corp = (Corporation)Data;
             FranchiseList = Db.SQL<Franchise>("SELECT f FROM Franchise f WHERE ParentCorp = ?", corp);
-            IncludeAddFranchise(corp);
         }
 
-        private void IncludeAddFranchise(Corporation corp)
+        void Handle(Input.AddFranchiseButton addFranchiseButton)
         {
-            AddFranchise addFranchise = (AddFranchise)Self.GET(string.Format("/Mohamad/partial/corp/{0}/addfranchise", corp.GetObjectID()));
-            AddFranchiseSection = addFranchise;
+            Db.Transact(() =>
+            {
+                Corporation corp = (Corporation)Data;
+                Franchise franchise = new Franchise();
+                franchise.Name = FranchiseName;
+                franchise.ParentCorp = corp;
+            });
+            UpdateFranchiseList();
         }
     }
 }

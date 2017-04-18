@@ -27,7 +27,14 @@
                 </tbody>
             </table>
             <br />
-            <starcounter-include partial="{{model.AddFranchiseSection}}"></starcounter-include>
+            <div>
+                <h4>Add Franchise</h4>
+                <fieldset>
+                    <label>Name: </label>
+                    <input value="{{model.FranchiseName$::input}}" /> &nbsp;&nbsp;&nbsp;
+                    <button value="{{model.AddFranchiseButton$::click}}" onmousedown="++this.value">Add Franchise</button>
+                </fieldset>
+            </div>
         </div>
         
     </template>
