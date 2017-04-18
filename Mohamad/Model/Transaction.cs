@@ -15,5 +15,7 @@ namespace Mohamad
         public Decimal Commission;
         public string Address;
         public Franchise Seller;
+
+        public string DateString => this.Date.ToString("yyyy-MM-dd");
     }
 }

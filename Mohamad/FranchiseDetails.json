@@ -7,5 +7,16 @@
   "City$": "",
   "Country$": "",
   "Address": "",
-  "SaveButton$": 0
+  "SaveButton$": 0,
+  "TransactionsList": [ { } ],
+  "HomeStreet$": "",
+  "HomeNumber$": 0,
+  "HomeZipCode$": 0,
+  "HomeCity$": "",
+  "HomeCountry$": "",
+  "HomeAddress": "",
+  "HomeDate$": "",
+  "HomePrice$": 0,
+  "HomeCommission$": 0,
+  "RegisterHomeButton$": 0
 }
