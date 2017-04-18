@@ -8,17 +8,18 @@ namespace Mohamad
         protected override void OnData()
         {
             base.OnData();
-            QueryResultRows<Corporation> corps = Db.SQL<Corporation>("SELECT c FROM Corporation c");
-            foreach(Corporation corp in corps)
-            {
-                AddCorp(corp);
-            }
+            UpdateCorps();
         }
 
-        private void AddCorp(Corporation corp)
+        private void UpdateCorps()
         {
-            CorpDetails corpDetails = (CorpDetails)Self.GET("/Mohamad/partial/corp/" + corp.GetObjectID());
-            this.CorpList.Add(corpDetails);
+            this.CorpList.Clear();
+            QueryResultRows<Corporation> corps = Db.SQL<Corporation>("SELECT c FROM Corporation c");
+            foreach (Corporation corp in corps)
+            {
+                CorpDetails corpDetails = (CorpDetails)Self.GET("/Mohamad/partial/corp/" + corp.GetObjectID());
+                this.CorpList.Add(corpDetails);
+            }
         }
 
         void Handle(Input.AddCorpButton addCorpButton)
@@ -28,8 +29,8 @@ namespace Mohamad
                 Corporation corp = new Corporation();
                 corp.Name = Name;
             });
+            UpdateCorps();
         }
-
 
     }
 }
