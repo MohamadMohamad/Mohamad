@@ -20,7 +20,7 @@
                 <tbody>
                     <template is="dom-repeat" items="{{model.FranchiseList}}">
                         <tr>
-                            <td>{{item.Name}}</td><td>{{item.SoldHomes}}</td><td>{{item.TotalCommission}}</td><td>{{item.AverageCommission}}</td><td>{{item.Trend}}</td>
+                            <td><a href="franchise/{{item.FranchiseID}}">{{item.Name}}</a></td><td>{{item.SoldHomes}}</td><td>{{item.TotalCommission}}</td><td>{{item.AverageCommission}}</td><td>{{item.Trend}}</td>
                         </tr>
                     </template>
                     
