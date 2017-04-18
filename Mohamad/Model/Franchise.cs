@@ -16,6 +16,11 @@ namespace Mohamad
         public int zipcode;
         public string city;
         public string country;
-        public Corporation ParentCorp; 
+        public Corporation ParentCorp;
+
+        public int SoldHomes => Db.SQL<Transaction>("SELECT t FROM Transaction t WHERE Seller = ?", this).Count();
+        public Decimal TotalCommission => Db.SQL<Decimal>("SELECT SUM(Commission) FROM Transaction WHERE Seller = ?", this).First;
+        public Decimal AverageCommission => ((SoldHomes == 0) ? 0 : (TotalCommission / SoldHomes));
+        public Decimal Trend => 0;
     }
 }
