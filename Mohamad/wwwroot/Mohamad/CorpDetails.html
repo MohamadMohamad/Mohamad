@@ -2,7 +2,7 @@
 
 <template>
     <template is="dom-bind">
-        <div>
+        <div style="border:solid; padding:20px;">
             <h3>{{model.Name}}</h3>
             <h4>Franchise Offices</h4>
             <h5>Sort On</h5>
@@ -10,7 +10,8 @@
             <button value="{{model.TotalCommissionSortButton$::click}}" onmousedown="++this.value">Total Commission</button> -
             <button value="{{model.AverageCommissionSortButton$::click}}" onmousedown="++this.value">Average Commission</button> -
             <button value="{{model.TrendSortButton$::click}}" onmousedown="++this.value">Positive Trend</button>
-            <table>
+            <br />
+            <table rules="all" border="1" cellpadding="5" cellspacing="5">
                 <thead>
                     <tr>
                         <th>Name</th><th>Number of homes sold</th><th>Total commission</th> <th>Average commission</th><th>Trend</th>
@@ -25,6 +26,9 @@
                     
                 </tbody>
             </table>
+            <br />
+            <starcounter-include partial="{{model.AddFranchiseSection}}"></starcounter-include>
         </div>
+        
     </template>
 </template>

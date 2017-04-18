@@ -31,6 +31,14 @@ namespace Mohamad
                 json.Data = DbHelper.FromID(DbHelper.Base64DecodeObjectID(id));
                 return json;
             });
+
+            Handle.GET("/Mohamad/partial/corp/{?}/addfranchise", (string id) =>
+            {
+                var json = new AddFranchise();
+                json.Data = DbHelper.Base64DecodeObjectID(id).ToString();
+                return json;
+            });
+
         }
     }
 }

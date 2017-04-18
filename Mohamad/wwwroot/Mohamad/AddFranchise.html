@@ -1,0 +1,12 @@
+﻿<link rel="import" href="/sys/polymer/polymer.html">
+
+<template>
+    <template is="dom-bind">
+        <fieldset>
+            <label>Name: </label>
+            <input value="{{model.Name$::input}}" /> &nbsp;&nbsp;&nbsp;
+            <button value="{{model.AddFranchiseButton$::click}}" onmousedown="++this.value">Add Franchise</button>
+        </fieldset>
+        
+    </template>
+</template>
